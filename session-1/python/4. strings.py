@@ -59,7 +59,15 @@ print(user_input.lstrip())  # Removes leading whitespace
 
 # Assignment 1: Create a string that contains a simple bio data like name, age, and country. Extract each piece of information and print them separately.
 # Write your code below:
+bio_data = "Name: Ismail Haydar, Age: 30, Country: USA"
 
+name = bio_data.split(", ")[0].split(": ")[1]
+age = bio_data.split(", ")[1].split(": ")[1]
+country = bio_data.split(", ")[2].split(": ")[1]
+
+print("Name:", name)
+print("Age:", age)
+print("Country:", country)
 
 # Section 2: Advanced String Operations
 # -------------------------------------
@@ -78,8 +86,15 @@ print(old_greeting)
 
 # Assignment 2: Create a formatted string that includes data from a list or dictionary. For example, use a dictionary to store a person's information and format a string to include it.
 # Write your code below:
+person_info = {
+    "name": "John Doe",
+    "age": 30,
+    "country": "USA"
+}
 
+formatted_string = "Name: {name}, Age: {age}, Country: {country}".format(**person_info)
 
+print(formatted_string)
 # Section 3: Advanced Slicing and Multiline Strings
 # -------------------------------------
 # Python strings are immutable, which means that every string operation creates a new string.
@@ -109,6 +124,25 @@ print(formatted_string)
 
 # Assignment 3: Write a function that takes a string and returns a dictionary with the counts of each character in the string.
 # Write your code below:
+def count_characters(string):
+    char_count = {}
+
+    for char in string:
+       
+        if char in char_count:
+            
+            char_count[char] += 1
+        else:
+           
+            char_count[char] = 1
+
+ 
+    return char_count
+
+input_string = "hello"
+result = count_characters(input_string)
+print(result)
+
 
 
 # Section 4: Regular Expressions

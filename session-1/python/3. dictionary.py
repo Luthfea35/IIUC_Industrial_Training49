@@ -68,12 +68,17 @@ student = {
     "grades": {
         "C++": 3.23,
         "Data Structure": 4.00,
-        "Alogorithm": 3.78,
+        "Algorithm": 3.78,
         "Computer Network": 3.89
     }
 }
 print("Student : " ,student)
-
+student["grades"]["C Programing"] = 3.00
+print("Addind new Subject\nStudent : " ,student)
+del student['grades']['Algorithm']
+print("After removing subject\nStudent:", student)
+student['grades']['C++'] = 3.88
+print("After modifying \n:", student)
 # print(simple_dict['name'])  # Accessing value by key
 # print(simple_dict.get('address', "Dhaka"))  # Accessing value by key
 
@@ -99,7 +104,20 @@ coordinates_info = {(35.6895, 139.6917): "Tokyo", (40.7128, -74.0060): "New York
 
 # Assignment 2: Create a dictionary where keys are student names and values are lists of grades. Calculate the average grade for each student.
 # Write your code below:
+student_grades = {
+    "Alice": [85,90, 88, 92, 95],
+    "Bob": [78, 82, 80, 85, 88],
+    "Charlie": [92, 95, 90, 88, 85]
+}
+def calculate_average(grades):
+    return sum(grades) / len(grades)
+average_grades = {}
 
+for student, grades in student_grades.items():
+    average_grades[student] = calculate_average(grades)
+
+for student, average_grade in average_grades.items():
+    print(f"{student}: {average_grade:.2f}")
 
 # Congratulations on completing the advanced section on Python dictionaries!
 # Review the assignments, try to solve them, and check your understanding of this powerful data structure.
