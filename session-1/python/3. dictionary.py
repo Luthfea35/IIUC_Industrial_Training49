@@ -69,7 +69,7 @@ student = {
         "C++": 3.23,
         "Data Structure": 4.00,
         "Alogorithm": 3.78,
-        "Natworking": 3.89
+        "Computer Network": 3.89
     }
 }
 print("Student : " ,student)
