@@ -81,7 +81,31 @@ print("Pip examples: See comments for usage.")
 # Assignments
 # -----------
 # Assignment 1: Create a simple package with at least two modules, each containing one function.
+# my_script.py
+from my_package import module1, module2
+
+module1.greet("Alice")
+
+result = module2.calculate_sum(3, 5)
+print(result) 
+
 # Assignment 2: Use pip to install any library that is new to you and write a small script to explore its functionality.
+import pandas as pd
+
+data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 22]}
+df = pd.DataFrame(data)
+
+
+print(df)
+
+print(df['Name']) 
+
+print(df.iloc[1])  
+
+df['City'] = ['New York', 'London', 'Paris']
+
+print(df)
+
 
 # Congratulations on completing the comprehensive section on Python's modules, packages, libraries, and pip!
 # Review the assignments, try to solve them, and check your understanding of these essential Python features.

@@ -92,7 +92,7 @@ person_info = {
     "country": "USA"
 }
 
-formatted_string = "Name: {name}, Age: {age}, Country: {country}".format(**person_info)
+formatted_string ="Name:{name}, Age: {age}, Country: {country}".format(**person_info)
 
 print(formatted_string)
 # Section 3: Advanced Slicing and Multiline Strings

@@ -46,8 +46,17 @@ else:
 
 # Assignment 1: Write a Python script that determines if a number is positive, negative, or zero using if-elif-else.
 # Write your code below:
+def check_number(number):
+    if number > 0:
+        return "Positive"
+    elif number < 0:
+        return "Negative"
+    else:
+        return "Zero"
 
-
+num = float(input("Enter a number: "))
+result = check_number(num)
+print("The number is", result)
 # Section 2: Logical and Boolean Operations
 # -----------------------------------------
 # Logical operators (and, or, not) are used to combine conditional statements.
@@ -70,6 +79,19 @@ else:
 # Assignment 2: Create a script that checks if a person is eligible for a senior citizen discount based on age and residency.
 # Write your code below:
 
+def check_eligibility(age, residency):
+    if age >= 60 and residency == "Yes":
+        return True
+    else:
+        return False
+
+age = int(input("Enter your age: "))
+residency = input("Are you a resident? (Yes/No): ").capitalize()
+
+if check_eligibility(age, residency):
+    print("Congratulations! You are eligible for a senior citizen discount.")
+else:
+    print("Sorry, you are not eligible for a senior citizen discount.")
 
 # Section 3: Real-World Applications
 # -----------------------------------
@@ -95,6 +117,38 @@ print(f"Ticket price: ${price}")
 
 # Assignment 3: Write a script that simulates a basic login system. Check username and password correctness.
 # Write your code below:
+class LoginSystem:
+    def __init__(self):
+        self.user_database = {
+            "user1": "password1",
+            "user2": "password2",
+            "user3": "password3"
+        }
+
+    def login(self):
+        username = input("Enter your username: ")
+        password = input("Enter your password: ")
+
+        if username in self.user_database and self.user_database[username] == password:
+            print("Login successful!")
+        else:
+            print("Invalid username or password. Please try again.")
+
+    def run(self):
+        print("Welcome to the basic login system.")
+        while True:
+            choice = input("Do you want to login? (yes/no): ").lower()
+            if choice == "yes":
+                self.login()
+            elif choice == "no":
+                print("Thank you for using the system. Goodbye!")
+                break
+            else:
+                print("Invalid choice. Please enter 'yes' or 'no'.")
+
+if __name__ == "__main__":
+    login_system = LoginSystem()
+    login_system.run()
 
 
 

@@ -72,7 +72,24 @@ list_length = len(simple_list)
 
 # Assignment 1: Create a 2D list representing a 3x3 matrix and perform operations like accessing, modifying, and iterating through it.
 # Write your code below:
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
 
+print("Element at row 2, column 3:", matrix[1][2])  # Output: 6
+
+matrix[1][2] = 10
+print("Modified matrix:")
+for row in matrix:
+    print(row)
+
+print("Iterating through the matrix:")
+for row in matrix:
+    for element in row:
+        print(element, end=" ")
+    print()
 
 # Section 2: Python Tuples
 # ------------------------
@@ -95,6 +112,28 @@ tuple_dict = {simple_tuple: "My Tuple"}
 
 # Assignment 2: Create a tuple with mixed data types and demonstrate its potential use cases in data structures like dictionaries.
 # Write your code below:
+# Create a tuple with mixed data types
+mixed_tuple = ("John", 25, True, 3.14)
+person_dict = {
+    "name": mixed_tuple[0],
+    "age": mixed_tuple[1],
+    "is_student": mixed_tuple[2],
+    "pi_value": mixed_tuple[3]
+}
+
+print("Name:", person_dict["name"])
+print("Age:", person_dict["age"])
+print("Is Student:", person_dict["is_student"])
+print("Pi Value:", person_dict["pi_value"])
+
+mixed_tuple = mixed_tuple[:2] + (False,) + mixed_tuple[3:]
+
+person_dict.update({
+    "is_student": mixed_tuple[2]
+})
+
+print("Updated Is Student:", person_dict["is_student"])
+
 
 
 # Section 3: Advanced Applications
@@ -115,6 +154,18 @@ incremented_matrix = [[cell + 1 for cell in row] for row in matrix]
 
 # Assignment 3: Create a list of tuples, where each tuple contains a student's name and their grade. Sort this list by grades.
 # Write your code below:
+student_grades = [
+    ("Alice", 85),
+    ("Bob", 92),
+    ("Charlie", 78),
+    ("David", 95),
+    ("Eva", 88)
+]
+sorted_student_grades = sorted(student_grades, key=lambda x: x[1])
+
+for student, grade in sorted_student_grades:
+    print(f"{student}: {grade}")
+
 
 
 # Congratulations on completing the advanced section on Python lists and tuples!

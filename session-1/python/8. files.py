@@ -13,12 +13,14 @@ We will explore:
 
 Each section includes detailed explanations, examples, and assignments.
 """
-
+import csv
+import json
 # Section 1: Plain Text Files
 # ---------------------------
 # Reading and writing plain text files is often the first step in file manipulation.
 
 # Example 1: Writing to a Text File
+
 with open('example.txt', 'w') as file:
     file.write("Hello, Python learners!\n")
     file.write("Welcome to file I/O operations.")
@@ -90,7 +92,45 @@ with open('users.json', 'r') as file:
 # Assignments
 # -----------
 # Assignment 1: Write a script that reads a CSV file containing product information and converts it into a JSON file.
+
+def csv_to_json(csv_file, json_file):
+
+    with open(csv_file, 'r') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        
+        products = []
+        
+        for row in csv_reader:
+            products.append(row)
+        print(products)
+        with open(json_file, 'w') as jsonfile:
+            json.dump(products, jsonfile) 
+
+
+
+# Example usage:
+#csv_to_json('E:\F\Review_Python_lesson 49\iiuc-industrial-training-49\session-1\python\products.csv', 'products.json')
+csv_file = 'products.csv'
+json_file = 'products.json'
+csv_to_json(csv_file, json_file)
+
+print(f'Converted CSV file "{csv_file}" to JSON file "{json_file}".')
+
 # Assignment 2: Create a log file writer that appends log messages to a file with timestamps.
+
+import time
+
+def write_log(message, log_file="app.log"):
+  
+  timestamp = time.strftime("%Y-%m-%d %H:%M:%S")  # Get current time
+  with open(log_file, "a") as f:
+    f.write(f"{timestamp} - {message}\n")
+
+# Example usage
+write_log("Application started.")
+write_log("Processing data...", log_file="data.log")  # Use different file
+
+print(f'Log messages written to specified files.')
 
 # Congratulations on completing the comprehensive section on Python file I/O and JSON handling!
 # Review the assignments, try to solve them, and check your understanding of file operations and data formats.
