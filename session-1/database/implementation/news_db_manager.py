@@ -27,7 +27,6 @@ def create_db_connection():
     except Error as e:
         print(f"The error '{e}' occurred")
         return None
-
 def execute_query(connection, query):
     """
     Execute a given SQL query on the provided database connection.
@@ -139,7 +138,7 @@ def create_tables(connection):
         news_id INT,
         summary_text TEXT,
         FOREIGN KEY (news_id) REFERENCES news (id)
-    );
+);
     """
     execute_query(connection, create_categories_table)
     execute_query(connection, create_authors_table)
@@ -152,13 +151,15 @@ def create_tables(connection):
 # Example usage
 if __name__ == "__main__":
     conn = create_db_connection()
-    if conn is not None:
-        # create_tables(conn)
+    if conn is not None:      
+        #create_tables(conn)
+        
         read_categories_query = "SELECT * FROM categories"
         news_categories = execute_read_query(conn, read_categories_query)
         print(news_categories)
 
-        read_authors_query = "SELECT * FROM authors"
-        news_authors = execute_read_query(conn, read_authors_query)
-        print(news_authors)
+        # read_authors_query = "SELECT * FROM authors"
+        # news_authors = execute_read_query(conn, read_authors_query)
+        # print(news_authors)
+
 

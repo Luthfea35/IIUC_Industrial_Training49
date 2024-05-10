@@ -217,3 +217,7 @@ if __name__ == "__main__":
         insert_category(conn, "Politics", "All news related to politics")
         insert_author(conn, "John Doe", "test@example.com")
         # Add more insert calls for other tables
+        insert_editor(conn,"BBC"," bbc@example.com")
+        insert_news(conn,1 ,1,1 ,'2023-01-01 10:00:00',"Election 2023","This is election news","www.example.com")
+        insert_image(conn,1,"http://example.com/img1.jpg")
+        insert_summary(conn,1,"Short summary of Election 2023")
