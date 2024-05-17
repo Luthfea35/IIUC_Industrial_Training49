@@ -80,7 +80,7 @@ def insert_category(connection, name, description):
     data = (name, description)
     execute_query(connection, query, data)
 
-def insert_author(connection, name, email):
+def insert_reporters(connection, name, email):
     """
     Inserts a new author into the authors table.
 
@@ -98,13 +98,13 @@ def insert_author(connection, name, email):
     None
     """
     query = """
-    INSERT INTO authors (name, email)
+    INSERT INTO reporters (name, email)
     VALUES (%s, %s)
     """
     data = (name, email)
     execute_query(connection, query, data)
 
-def insert_editor(connection, name, email):
+def insert_publishers(connection, name, email):
     """
     Inserts a new editor into the editors table.
 
@@ -122,7 +122,7 @@ def insert_editor(connection, name, email):
     None
     """
     query = """
-    INSERT INTO editors (name, email)
+    INSERT INTO publishers (name, email)
     VALUES (%s, %s)
     """
     data = (name, email)
@@ -219,14 +219,15 @@ if __name__ == "__main__":
         insert_category(conn, "Sports", "All news related to sportcs")
         insert_category(conn, "Business", "All news related to businesss")
         #insert_author(conn, "John Doe", "test@example.com")
-        insert_author(conn, "Charlie Madigan", "@Chicago.com")
-        insert_author(conn, "Michelle Malkin", "test@example.com")
+        insert_reporters(conn, "John Doe", "test@example.com")
+        insert_reporters(conn, "John Doe", "abcd@example.com")
         # Add more insert calls for other tables
         # insert_editor(conn,"BBC"," bbc@example.com")
-        insert_editor(conn,"CNN"," bbc@example.com")
+        insert_publishers(conn,"BBC"," bbc@example.com")
+        insert_publishers(conn,"CNN"," cnn@example.com")
         # insert_news(conn,1 ,1,1 ,'2023-01-01 10:00:00',"Election 2023","This is election news","www.example.com")
-        insert_news(conn,1 ,3,2 ,'2023-01-01 11:00:00',"Election 2023","This is election news","www.example.com")
-        insert_news(conn,1 ,2,4 ,'2024-01-01 10:00:15',"Election 2023","This is election news","www.example.com")
+        insert_news(conn,1 ,1,1 ,'2023-01-01 10:00:00',"Election 2023","This is election news","www.example.com")
+        insert_news(conn,1 ,1,1 ,'2023-01-01 10:00:00',"Election 2023","This is election news","www.example.com")
         # insert_image(conn,1,"http://example.com/img1.jpg")
         insert_image(conn,1,"http://example.com/img1.jpg")
         insert_image(conn,1,"http://example.com/img1.jpg")
