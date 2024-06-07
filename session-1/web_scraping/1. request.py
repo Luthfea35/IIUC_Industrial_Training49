@@ -65,7 +65,18 @@ if __name__ == "__main__":
 
 # Assignments
 # 1. Modify the GET Example: Change the get_example function to fetch a list of posts instead of just one. Analyze the JSON structure and print out the titles of all posts.
+def get_example():
+     url = 'https://jsonplaceholder.typicode.com/posts'  
+     response = requests.get(url)  
 
+     if response.status_code == 200:  
+         posts = response.json()  
+         for post in posts:  
+             print(post['title']) 
+     else:
+         print("Failed to fetch posts")
+
+# get_example()
 # 2. Error Handling: Add error handling to both functions to manage exceptions like connection errors or timeouts.
 
 
